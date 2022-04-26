@@ -1,0 +1,578 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Font Face*/
+
+$fonts-regular: ("Thin": 100, "ExtraLight": 200, "Light": 300, "Regular": 400, "Medium": 500, "SemiBold": 600, "Bold": 700, "ExtraBold": 800, "Black": 900);
+
+$fonts-italic: ("ThinItalic": 100, "ExtraLightItalic": 200, "LightItalic": 300, "RegularItalic": 400, "MediumItalic": 500, "SemiBold": 600, "BoldItalic": 700, "ExtraBoldItalic": 800, "BlackItalic": 900);
+
+@each $name,
+$weight in $fonts-regular {
+    @font-face {
+        font-family: 'Metropolis';
+        src: url(metropolis/Metropolis-#{$name}.otf);
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+@each $name,
+$weight in $fonts-italic {
+    @font-face {
+        font-family: 'Metropolis';
+        src: url(metropolis/Metropolis-#{$name}.otf);
+        font-weight: $weight;
+        font-style: italic;
+    }
+}
+
+/*Variables*/
+
+$bg-colour: #ffffff;
+$bg-colour-secondary: #FAFDFC;
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-other: #555555;
+$primary: #DB75FF;
+$secondary: #ED2065;
+$secondary-light: #FCB5CB;
+$secondary-lighter: #F9E6EA;
+$accent: #6BFDD1;
+$accent-secondary: #2FE0E8;
+$accent-tertiary: #FDEE6B;
+
+$gradient-1: linear-gradient(180deg, #F9E6EA 0%, #FCB5CB 100%);
+$gradient-2: linear-gradient(180deg, #F4E6F9 0%, #E9B5FC 100%);
+$gradient-3: linear-gradient(178.85deg, #C5FAFC 15.34%, #2FE0E8 130.02%);
+$gradient-4: linear-gradient(180deg, #D4F9EE 0%, #6BFDD1 100%);
+$gradient-bright:linear-gradient(202.46deg, #ED2065 -19.01%, #DB75FF 20.59%, #2FE0E8 64.29%, #6BFDD1 132.17%);
+
+$size-1: 8px;
+$size-2: 12px;
+$size-3: 16px;
+$size-4: 20px;
+$size-5: 24px;
+
+@mixin font ($font-weight, $font-style) {
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+@mixin flexbox ($direction, $justify, $align, $wrap, $flex) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $justify;
+    flex-wrap: $wrap;
+    flex: $flex;
+
+}
+
+/*Base*/
+
+html,
+body {
+    font-family: 'Metropolis';
+    color: $text-primary;
+}
+
+.zd-body {
+    background-image: url(imgs/zendesk-bg.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    text-decoration: none;
+    color: $text-secondary
+}
+
+.btn {
+    background-color: $secondary;
+    color: $bg-colour;
+    padding: 12px 18px;
+    border-radius: $size-1/2;
+    box-shadow: inset 0 0 0 0 darken($primary, 15%);
+    font-size: 1rem;
+    font-family: 'Metropolis';
+
+    &.btn-primary {
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        box-shadow: inset 300px 0 0 0 darken($primary, 15%);
+        transition: ease-in 0.3s;
+
+    }
+}
+
+input[type="text"], input[type="email"], textarea {
+    font-family: 'Metropolis';
+    font-size: 1rem;
+    padding-left: $size-2;
+    color: $text-secondary;
+    &:focus {
+        outline: 1px solid $secondary-light;
+        box-shadow: 0 0 10px $secondary-light;
+        border: none;
+    }
+}
+
+/*Navbar*/
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 24px 100px;
+    background: $bg-colour-secondary;
+
+    .logo {
+        font-size: 2rem;
+
+        a {
+            text-decoration: none;
+            color: $primary;
+            @include font(600, normal);
+        }
+    }
+
+    .nav {
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+
+        .nav-link {
+            padding: 1rem;
+
+            a {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 0px;
+                    bottom: -10px;
+                    left: 0;
+                    height: 3px;
+                }
+
+                &:hover {
+                    @include font(600, normal);
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        bottom: -10px;
+                        left: 0;
+                        height: 3px;
+                        background: $gradient-bright;
+                        transition: 300ms;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Home*/
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 5%;
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+
+    h1 {
+        @include font(800, normal);
+        font-size: 2.5rem;
+        margin-top: 20px;
+
+        span {
+            color: $primary;
+        }
+    }
+
+    p {
+        color: $text-secondary;
+        margin: 40px 0 50px 0;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+}
+
+#portfolio {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+    .card {
+        width: 40%;
+        aspect-ratio: 1/1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: $size-4;
+        padding: 50px;
+        margin: $size-4;
+        text-align: center;
+
+        &:nth-child(1) {
+            background: $gradient-1;
+        }
+
+        &:nth-child(2) {
+            background: $gradient-2;
+        }
+
+        &:nth-child(3) {
+            background: $gradient-3;
+        }
+
+        &:nth-child(4) {
+            background: $gradient-4;
+        }
+
+        img {
+            width: 80%;
+            margin-bottom: $size-5;
+        }
+
+        .card-title {
+            color: $text-primary;
+            margin: $size-5 0;
+        }
+
+        .card-description {
+            color: $text-other;
+            font-size: 0.875rem;
+
+        }
+    }
+}
+
+/*About*/
+
+.hero.about {
+    max-width: 1500px;
+    padding-top: 2%;
+    h1 {
+        position: relative;
+        margin-bottom: $size-5*3;
+        line-height: 1.5;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 90%;
+            width: 50%;
+        }
+    }
+
+    flex-direction: column;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        align-self: center;
+        flex-wrap: wrap;
+
+        img {
+            align-self: flex-start;
+        }
+
+    }
+    p {
+        max-width: 500px;
+        line-height: 2;
+
+        em {
+            @include font (600, normal);
+        }
+    }
+}
+
+.quote {
+    background-image: url(imgs/mesh.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 80vh;
+    color: $bg-colour;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: $size-5*4;
+
+    .quotation {
+        font-size: 2rem;
+        @include font(700, normal);
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .source {
+        font-size: 1rem;
+        @include font(300, italic);
+        margin-top: $size-5;
+    }
+}
+
+.about-me {
+    @include flexbox(row, space-between, flex-start, wrap, null);
+    
+    padding-top: 5%;
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+
+    h2 {
+        @include font(800, normal);
+        font-size: 2.5rem;
+        margin-top: 20px;
+
+        span {
+            color: $primary;
+    }
+    }
+
+    ul {
+        margin-top: $size-5*2;
+        li {
+            list-style: none;
+            padding: $size-1 0;
+            &:before {
+                content: "\2764";
+                color: $secondary;
+                font-size: 1.25rem;
+                vertical-align: middle;
+                padding-right: $size-1
+            }
+        }
+    }
+}
+
+.skills {
+    @include flexbox(row, space-between, flex-start, wrap, null);
+    padding-top: 5%;
+    max-width: 800px;
+    width: 50%;
+    margin: 0 auto;
+    min-height: 50vh;
+    margin-bottom: 5%;
+
+    h2 {
+        @include font(800, normal);
+        font-size: 2.5rem;
+        margin: $size-4 0;
+
+        span {
+            color: $primary;
+    }
+    }
+
+    p {
+        margin: $size-4 0;
+        line-height: 2;
+    }
+
+    .contact-me {
+        p {
+            @include font(600, normal);
+            font-size: 1.5rem;
+            color: $text-other;
+        }
+        @include flexbox(column, center, center, null, null);
+        width: 100%;
+    }
+    .btn {
+        font-size: 1.125rem;
+    }
+}
+
+
+/*Contacto*/ 
+
+.contact-title {
+    margin-top: 5%;
+    @include flexbox(column, center, center, null, null);
+    svg {
+        height: 120px;
+        margin-top: $size-3;
+        margin-bottom: $size-3;
+    }
+    h1 {
+        @include font(800, normal);
+        font-size: 2.5rem;
+    }
+}
+
+#form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    div:nth-child(1) {
+        display: flex;
+        width: 100%;
+        .form-input {
+            flex: 0 1 50%;
+            &:nth-child(1) {
+                margin-right: $size-1;
+            }
+        }
+    }
+    .form-input {
+        @include flexbox(column, flex-start, center, null, null);
+        margin: $size-2 0;
+        label, input {
+            margin: $size-1 0;
+        }
+        input {
+            border: 1px solid #C4C4C4;
+            background-color: $bg-colour-secondary;
+            height: $size-5*1.5;
+            width: 100%;
+        }
+        ::placeholder {
+            font-family: 'Metropolis';
+            font-size: 1rem;
+            
+        
+        }
+    }
+    .form-textarea {
+        textarea {
+            width: 100%;
+            aspect-ratio: 4/1;
+            border: 1px solid #C4C4C4;
+
+        }
+        margin-bottom: $size-5;
+    }
+
+    .button-container {
+        @include flexbox(null, center, center, null, null);
+    }
+    margin-bottom: 5%;
+}
+
+/*Secciones*/
+
+.section.hero {
+    @include flexbox(row, space-between, flex-start, wrap, null);
+    padding-top: 5%;
+    max-width: 800px;
+    width: 50%;
+    margin: 0 auto;
+
+    p {
+        margin: $size-1 0;
+    }
+
+    h1 {
+        margin-bottom: $size-5*2;
+    }
+}
+
+.mockups {
+    width: 80%;
+    margin: 10% auto;
+    background-image: url(imgs/bg-zd-mockups.png);
+    background-size: 35vw;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .row {
+        @include flexbox(row, flex-start, center, null, null);
+        // &:nth-child(1) div::after{
+        //     content: "";
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     top: 20%;
+        //     right: -80%;
+        //     border-top: 3px dashed lighten($primary, 20%);
+        //     border-right: 3px dashed lighten($primary, 20%);
+        //     border-radius: 0 $size-5 0 0;
+        //     z-index: -1;
+        // }
+        &:nth-child(2) {
+            justify-content: flex-end;
+            position: relative;
+
+            // &::after{
+            //     content: "";
+            // position: absolute;
+            // width: 50%;
+            // height: 100%;
+            // top: 20%;
+            // right: 30%;
+            // border-top: 3px dashed lighten($primary, 20%);
+            // border-left: 3px dashed lighten($primary, 20%);
+            // border-radius: $size-5 0 0 0;
+            // z-index: -1;
+            // }
+
+            // &::before{
+            //     content: "";
+            //     display: block;
+            //     width: 100px;
+            //     height: 100px;
+            //     background-color: $accent;
+            //     position: absolute;
+            //     top: -80%;
+            //     left: 55%;
+            //     border-radius: $size-1;
+            //     transform: rotate(155deg);
+            //     z-index: -1;
+            // }
+        }
+        // &:nth-child(3)::before{
+        //     content: "";
+        //     display: block;
+        //     width: 80px;
+        //     height: 80px;
+        //     background-color: $accent-tertiary;
+        //     position: absolute;
+        //     left: 25%;
+        //     bottom: -30%;
+        //     border-radius: $size-1;
+        //     transform: rotate(45deg);
+        //     z-index: -1;
+        // } 
+    div {
+        text-align: center;
+        position: relative;
+        h2 {
+            margin: $size-5 0;
+        }
+        .btn {
+            display: inline-block;
+            margin: $size-2 0;
+        }
+    }
+}
+    
+
+}
