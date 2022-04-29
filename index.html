@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Euge Sorgetti - Diseñadora y Desarrollora Web</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo"><a href="index.html">Euge Sorgetti</a></div>
-        <ul class="nav">
+        <i class="fa-solid fa-bars" id="burger"></i>
+        <ul class="nav" id="nav">
             <li class="nav-link">
                 <a href="#portfolio">Portfolio</a>
             </li>
@@ -27,37 +31,57 @@
     </nav>
     <main>
         <section class="hero">
-            <div>
+            <div data-aos="fade-right" data-aos-duration="1000">
                 <h1>¡Hola! 👋 Soy <span>Euge</span></h1>
-                <p>Soy diseñadora UX/UI y desarrolladora web de Buenos Aires, Argentina</p>
+                <p>Soy diseñadora UX/UI y desarrolladora web de Buenos Aires, Argentina.
+                    <br>
+                    Me encantan el café, los animales, estudiar idiomas y la ilustración.
+                    <br>
+                    Acá vas a poder conocerme mejor, encontrar algunos trabajos de diseño y desarrollo, proyectos personales y trabajos de cursos.
+                </p>
                 <a href="contacto.html" class="btn">Contactame</a>
             </div>
-            <div>
+            <div data-aos="fade-left" data-aos-duration="1000" >
                 <img src="imgs/profile.png" alt="Euge">
             </div>
         </section>
-        <section id="portfolio">
-            <a href="zendesk/zendesk.html" class="card">
+        <section id="portfolio"  data-aos="fade-left" data-aos-duration="1000" >
+            <a href="zendesk.html" class="card">
                 <img src="imgs/zd.png" alt="">
                 <h2 class="card-title">Zendesk Guide</h2>
                 <p class="card-description">Diseño y desarrollo de centros de Ayuda</p>
             </a>
-            <a href="uxui/uxui.html" class="card">
+            <a href="uxui.html" class="card">
                 <img src="imgs/uxui.png" alt="">
                 <h2 class="card-title">UX/UI</h2>
                 <p class="card-description">Proyectos de research, diseño y UX Writing</p>
             </a>
-            <a href="uichallenges/uichallenges.html" class="card">
+            <a href="design.html" class="card">
                 <img src="imgs/uichallenge.png" alt="">
                 <h2 class="card-title">Diseño y Desarrollo</h2>
                 <p class="card-description">Proyectos y trabajos freelance de diseño y desarrollo web</p>
             </a>
-            <a href="design/design.html" class="card">
+            <a href="uichallenge.html" class="card">
                 <img src="imgs/dyd.png" alt="">
                 <h2 class="card-title">UI Challenges</h2>
                 <p class="card-description">Algunos desafíos breves para ejercitar mis habilidades de diseño</p>
             </a>
         </section>
     </main>
+    <footer>
+        <div class="footer-top">
+            <a href="https://www.linkedin.com/in/eugenia-sorgetti/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.behance.net/eugesorgetti" target="_blank"><i class="fa-brands fa-behance"></i></a>
+            <a href="https://github.com/EugeSorgetti"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Eugenia Sorgetti 2022</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

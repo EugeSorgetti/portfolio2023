@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="imgs/favicon.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Euge Sorgetti | Diseño y Desarrollo Web</title>
+    </head>
 
 <body>
     <nav class="navbar">
         <div class="logo"><a href="index.html">Euge Sorgetti</a></div>
-        <ul class="nav">
+        <i class="fa-solid fa-bars" id="burger"></i>
+        <ul class="nav" id="nav">
             <li class="nav-link">
                 <a href="index.html#portfolio">Portfolio</a>
             </li>
@@ -27,56 +33,74 @@
             </li>
         </ul>
     </nav>
+<main>
     <section class="hero about">
-            <h1>Siempre <span>pensando</span> <br> más allá <svg width="268" height="43" viewBox="0 0 268 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 38.5001C38.3333 20.8335 138.4 -9.19988 264 12.0001" stroke="#ED2065" stroke-width="8"
-                    stroke-linecap="round" />
-            </svg></h1>
-           
-        <div>
-            <img src="imgs/squares.jpg" alt="">
-            <p>
+        <h1  data-aos="fade-right" data-aos-duration="1000">Siempre <span>pensando</span> <br> más allá <svg width="268" height="43" viewBox="0 0 268 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 38.5001C38.3333 20.8335 138.4 -9.19988 264 12.0001" stroke="#ED2065" stroke-width="8"
+                stroke-linecap="round"/>
+        </svg></h1>
+       
+    <div>
+        <img src="imgs/squares.jpg" alt=""  data-aos="fade-up-right" data-aos-duration="1500">
+        <p data-aos="fade-up-left" data-aos-duration="1500">
 
-                Recorrí muchas áreas antes de definirme por el diseño web y UX, aunque el hilo en común que las une a
-                todas son la <em>creatividad</em>, los desafíos de <em>ingenio</em>, la <em>psicología</em> humana y la <em>comunicación</em>.
-                Lo que <em>me motiva</em> es entender el mundo que nos rodea y a las personas que viven en él; investigar,
-                entender, encontrar soluciones a problemas, crear experiencias accesibles para todos.
-            </p>
-        </div>
-    </section>
-    <section class="quote">
-        <p class="quotation">“A veces pienso hasta en seis cosas imposibles antes del desayuno”</p>
-        <p class="source">Lewis Carroll, Alicia en el País de las Maravillas</p>
-    </section>
-    <section class="about-me">
-        <div>
-            <h2>Lo que me <span> <br> define</span></h2>
-            <ul>
-                <li>Empática</li>
-                <li>Detallista y organizada</li>
-                <li>Curiosa y siempre en busca de aprender y mejorar</li>
-                <li>Resiliente</li>
-            </ul>
-        </div>
-        <div>
-            <img src="imgs/about-me.jpg" alt="">
-        </div>
-    </section>
-    <section class="skills">
-        <h2>Mis <span>skills</span> <br> profesionales</h2>
-        <p>Tengo experiencia trabajando en equipos multidisciplinarios y con metodologías ágiles, diseñando y maquetando
-            sitios web.
-
-
-            Manejo Figma, paquete Adobe (XD, Photoshop, Illustrator, Lightroom), HTML, CSS, Bootstrap y Javascript.
-
+            Recorrí muchas áreas antes de definirme por el diseño web y UX, aunque el hilo en común que las une a
+            todas son la <em>creatividad</em>, los desafíos de <em>ingenio</em>, la <em>psicología</em> humana y la <em>comunicación</em>.
+            Lo que <em>me motiva</em> es entender el mundo que nos rodea y a las personas que viven en él; investigar,
+            entender, encontrar soluciones a problemas, crear experiencias accesibles para todos.
         </p>
-        <div class="contact-me">
-            <p>¿Te interesa mi perfil?</p>
-            <a href="contacto.html" class="btn">Contactame</a>
-        </div>
-    </section>
+    </div>
+</section>
+<section class="quote">
+    <p class="quotation" data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom" data-aos-duration="1500">“A veces pienso hasta en seis cosas imposibles antes del desayuno”</p>
+    <p class="source" data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom" data-aos-duration="1500" data-aos-delay="300">Lewis Carroll, Alicia en el País de las Maravillas</p>
+</section>
+<section class="about-me">
+    <div>
+        <h2 data-aos="fade-right" data-aos-duration="1000">Lo que me <span> <br> define</span></h2>
+        <ul>
+            <li data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="300">Empática</li>
+            <li data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="400">Detallista y organizada</li>
+            <li data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="500">Curiosa y siempre en busca de aprender y mejorar</li>
+            <li data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="600">Resiliente</li>
+        </ul>
+    </div>
+    <div>
+        <img src="imgs/about-me.jpg" alt="">
+    </div>
+</section>
+<section class="skills" data-aos="fade-up" data-aos-duration="1000">
+    <h2 >Mis <span>skills</span> <br> profesionales</h2>
+    <p>Tengo experiencia trabajando en equipos multidisciplinarios y con metodologías ágiles, diseñando y maquetando
+        sitios web.
 
+
+        Manejo Figma, paquete Adobe (XD, Photoshop, Illustrator, Lightroom), HTML, CSS, Bootstrap y Javascript.
+
+    </p>
+    <div class="contact-me">
+        <p>¿Te interesa mi perfil?</p>
+        <a href="contacto.html" class="btn"data-aos-delay="500">Contactame</a>
+    </div>
+</section>
+</main>
+<footer>
+    <div class="footer-top">
+        <a href="https://www.linkedin.com/in/eugenia-sorgetti/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.behance.net/eugesorgetti" target="_blank"><i class="fa-brands fa-behance"></i></a>
+        <a href="https://github.com/EugeSorgetti"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <div class="footer-bottom">
+        <p>© Copyright Eugenia Sorgetti 2022</p>
+    </div>
+</footer>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 
 </html>
