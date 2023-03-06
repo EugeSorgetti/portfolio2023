@@ -790,7 +790,7 @@ p {
 .mockups {
   width: 90%;
   max-width: 1400px;
-  margin: 7% auto;
+  margin: 4% auto;
 }
 
 .mockups .row {
@@ -816,6 +816,62 @@ p {
   position: relative;
 }
 
+.mockups .row.preview {
+  margin-bottom: 80px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mockups .row.preview .divide {
+  color: #ED2065;
+}
+
+.mockups .row.preview .divide:nth-child(4) {
+  margin-top: 20px;
+}
+
+.mockups .row.preview p {
+  font-weight: bold;
+  font-size: 20px;
+  max-width: 40ch;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.mockups .row.preview p a {
+  color: #ED2065;
+}
+
+.mockups .row.preview div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mockups .row.preview div img {
+  width: 30%;
+  margin: 24px;
+  border-radius: 8px;
+}
+
 .mockups .row div {
   text-align: center;
   position: relative;
@@ -835,6 +891,7 @@ p {
   max-width: 500px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
 }
 
 .mockups.wd .row {
@@ -994,6 +1051,15 @@ p {
   }
   .mockups .row {
     margin-bottom: 72px;
+  }
+  .mockups .row.preview div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mockups .row.preview div img {
+    width: 100%;
   }
   .mockups.wd .row {
     -webkit-box-orient: vertical;

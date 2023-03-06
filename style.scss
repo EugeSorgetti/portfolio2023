@@ -541,7 +541,7 @@ p {
 .mockups {
     width: 90%;
     max-width: 1400px;
-    margin: 7% auto;
+    margin: 4% auto;
 
 
     .row {
@@ -549,6 +549,37 @@ p {
         &.row-right {
             justify-content: flex-end;
             position: relative;
+        }
+
+        &.preview {
+            margin-bottom: 80px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .divide {
+                color: $secondary;
+                &:nth-child(4) {
+                    margin-top: 20px;
+                }
+            }
+            p {
+                font-weight: bold;
+                font-size: $size-4;
+                max-width: 40ch;
+                text-align: center;
+                margin-top: 16px;
+                a {
+                    color: $secondary;
+                }
+            }
+            div {
+                @include flexbox(row, center, space-between, null, null)
+                img {
+                    width: 30%;
+                    margin: 24px;
+                    border-radius: 8px;
+                }
+            }
         }
     
     div {
@@ -565,6 +596,7 @@ p {
             width: 100%;
             max-width: 500px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 16px;
         }
     }
 }
@@ -724,6 +756,14 @@ p {
     .mockups {
         .row {
             margin-bottom: $size-5*3;
+            &.preview {
+                div {
+                    flex-direction: column;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
 
         &.wd {
